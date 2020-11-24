@@ -35,13 +35,14 @@ Napi::Value Blake2(const Napi::CallbackInfo& info, bool b) {
   Napi::Number outlen = info[2].As<Napi::Number>();
   size_t outlenValue = outlen.Uint32Value();
 
-  uint8_t outData[outlenValue];
+  uint8_t* outData = new uint8_t[outlenValue];
   if (b) {
     blake2b(outData, outlenValue, inputData, input.Length(), keyData, keyLength);
   } else {
     blake2s(outData, outlenValue, inputData, input.Length(), keyData, keyLength);
   }
   Napi::Buffer<uint8_t> buffer = Napi::Buffer<uint8_t>::Copy(env, outData, outlenValue);
+  delete outData;
 
   return buffer;
 }
