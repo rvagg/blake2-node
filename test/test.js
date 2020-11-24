@@ -34,7 +34,7 @@ describe('blake2', () => {
 
   it('dcposch/blakejs generated test vectors', () => {
     const vectors = fs.readFileSync(path.join(__dirname, 'dcposch_blakejs_generated_test_vectors.txt'), 'utf8')
-      .split('\n')
+      .split(/\r?\n/)
       .filter(Boolean)
       .map((line) => line.split('\t'))
 
@@ -46,7 +46,7 @@ describe('blake2', () => {
 
   describe('blake2*-kat vectors', () => {
     const run = (fn) => {
-      const lines = fs.readFileSync(path.join(__dirname, `${fn === blake2b ? 'blake2b' : 'blake2s'}-kat.txt`), 'utf8').split('\n').filter(Boolean)
+      const lines = fs.readFileSync(path.join(__dirname, `${fn === blake2b ? 'blake2b' : 'blake2s'}-kat.txt`), 'utf8').split(/\r?\n/).filter(Boolean)
       let input
       let key
       let vectors = 0
