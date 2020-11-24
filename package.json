@@ -1,6 +1,6 @@
 {
   "name": "@rvagg/blake2",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "BLAKE2 native add-on for Node.js",
   "main": "blake2-node.js",
   "scripts": {
