@@ -14,6 +14,13 @@
         'xcode_settings': {
           'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES', # -fvisibility=hidden
         }
+      }],
+      ['OS=="win"', {
+        "msvs_settings": {
+          "VCCLCompilerTool": {
+            "AdditionalOptions": ["/arch:AVX"]
+          }
+        }
       }]
     ]
   }]
