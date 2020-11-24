@@ -1,0 +1,32 @@
+{
+  "name": "@rvagg/blake2",
+  "version": "0.0.0",
+  "description": "BLAKE2 native add-on for Node.js",
+  "main": "blake2-node.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rvagg/blake2-node.git"
+  },
+  "keywords": [
+    "BLAKE2"
+  ],
+  "author": "Rod <rod@vagg.org> (http://r.va.gg/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rvagg/blake2-node/issues"
+  },
+  "homepage": "https://github.com/rvagg/blake2-node#readme",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "napi-macros": "^2.0.0",
+    "node-addon-api": "^3.0.2"
+  },
+  "gypfile": true,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
